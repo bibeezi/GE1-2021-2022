@@ -325,8 +325,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e99b205814add3c4596e46ec2e1f70e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loops: 10
-  prefab: {fileID: 4048890447712918444, guid: 2bc4b0f0c6dd37d4fa70e35247aee4d2, type: 3}
+  prefab: {fileID: 5945956897210452501, guid: dc997e5164d80ef448b30c597889eb7a, type: 3}
+  points: 6
+  radius: 1.1
+  outpoints: 9
 --- !u!4 &2034337706
 Transform:
   m_ObjectHideFlags: 0
