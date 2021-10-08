@@ -83,7 +83,7 @@ public class AITank : MonoBehaviour {
 
         // Task 4
         // Put code here to check if the player is in front of or behind the tank
-        Vector3 distance = transform.position - player.position;
+        Vector3 distance = player.position - transform.position;
         float dot = Vector3.Dot(transform.forward, distance);
         
         if(dot > 0) {
@@ -97,8 +97,8 @@ public class AITank : MonoBehaviour {
         // Put code here to calculate if the player is inside the field of view and in range
         // You can print stuff to the screen using:
         // GameManager.Log("Hello from the AI tank");
-        float angle = Mathf.Acos(dot / distance) * Mathf.RadtoDeg;
-        float distanceFloat = Vector3.Distance(transform.position, player.position);
+        float distanceFloat = Vector3.Distance(player.position, transform.position);
+        float angle = Mathf.Acos(dot / distanceFloat) * Mathf.Rad2Deg;
 
         if(angle < 45 && distanceFloat < 10f){
             GameManager.Log("Enemy spotted!");
