@@ -46,14 +46,31 @@ public class AITank : MonoBehaviour {
         Vector3 pos = transform.position;
         Vector3 toNext = waypoints[current] - pos;
         float dist = toNext.magnitude;
-        if (dist < 1)
-        {
+        if (dist < 1) {
             current = (current + 1) % waypoints.Count;
         }
         Vector3 direction = toNext / dist;
-        pos += direction * speed * Time.deltaTime;
-        transform.position = pos;
-        transform.forward = toNext;
+        // pos += direction * speed * Time.deltaTime;
+        // transform.position = pos;
+        // transform.forward = toNext;
+        // transform.Translate(0, 0, speed * Time.deltaTime);
+        transform.position = Vector3.Lerp(transform.position, waypoints[current], Time.deltaTime);
 
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(toNext, Vector3.up), 180 * Time.deltaTime);
+
+        Vector3 toPlayer = player.position - transform.position;
+        float dot = Vector3.Dot(transform.forward, toPlayer.normalized);
+        float angle = Mathf.Acos(dot) * Mathf.Deg2Rad;
+        if (angle < 45) {
+            Debug.Log("Inside of field of view");
+        }
+        if (dot > 0) {
+            Debug.Log("In Front");            
+        }
+        else {
+            Debug.Log("Behind");
+        }
+
+        float angle1 = Vector3.Angle(toPlayer, transform.forward);
     }
 }
