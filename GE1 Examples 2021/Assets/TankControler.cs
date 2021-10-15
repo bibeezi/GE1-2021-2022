@@ -5,7 +5,7 @@ using UnityEngine;
 public class TankControler : MonoBehaviour
 {
     public float speed = 5;
-    public float rotSpeed = 30;
+    public float rotSpeed = 90;
     // Start is called before the first frame update
     void Start()
     {
