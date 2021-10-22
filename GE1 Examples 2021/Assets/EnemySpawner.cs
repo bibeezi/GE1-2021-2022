@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject prefab;
-    public int count = 0;
+    public int count;
 
     System.Collections.IEnumerator Spawn() {
         while(true) {
@@ -34,6 +34,6 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        count = GameObject.FindGameObjectsWithTag("enemy").Length;
     }
 }
