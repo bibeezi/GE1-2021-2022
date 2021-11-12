@@ -62,21 +62,21 @@ public class AITank : MonoBehaviour {
 
 
         Vector3 toPlayer = player.position - transform.position;
-        float dot = Vector3.Dot(transform.forward, toPlayer.normalized);
-        float angle = Mathf.Acos(dot) * Mathf.Rad2Deg;
-        if (angle < 45)
-        {
-            Debug.Log("Ïnside field of view");
-        }
+        // float dot = Vector3.Dot(transform.forward, toPlayer.normalized);
+        // float angle = Mathf.Acos(dot) * Mathf.Rad2Deg;
+        // if (angle < 45)
+        // {
+        //     Debug.Log("Ïnside field of view");
+        // }
 
-        if (dot > 0)
-        {
-            Debug.Log("iN FRONT");        
-        }
-        else
-        {
-            Debug.Log("behind");
-        }
+        // if (dot > 0)
+        // {
+        //     Debug.Log("iN FRONT");        
+        // }
+        // else
+        // {
+        //     Debug.Log("behind");
+        // }
 
         float angle1 = Vector3.Angle(toPlayer, transform.forward);
     }
